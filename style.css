@@ -497,7 +497,9 @@ header {
 }
 
 .context {
-    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: auto;
     width: 100%;
     display: flex;
     align-items: center;
@@ -638,7 +640,12 @@ header {
 
     .context h2{
         font-size: 1.2rem; /* Adjust heading font size */
-}
+    }
+    
+    .text {
+    font-size: 14px;
+    }
+
 
 }
 
@@ -653,8 +660,7 @@ header {
     }
 
     .content-main {
-        width: 90%; /* Adjust width */
-        max-width: 100%; /* Ensure responsiveness */
+        
         height: auto; /* Adjust height automatically */
         margin: 10px; /* Reduce margin */
         padding: 10px; /* Reduce padding */
@@ -670,7 +676,10 @@ header {
     }
     .context h2{
         font-size: 1rem; /* Adjust heading font size */
-}
+    }
+    .text {
+    font-size: 12px;
+    }
 
 }
 /* end of 2nd page */
@@ -775,7 +784,7 @@ header {
     }
 
     .text {
-        font-size: 8px; /* Decrease font size */
+        font-size: 12px; /* Decrease font size */
     }
 }
 
@@ -1030,6 +1039,127 @@ header {
     }
 }
 
+
+
+
+.radial-bars {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.radial-bars .radial-bar {
+    height: 250px; /* Increased height */
+    margin-bottom: 10px;
+    position: relative;
+    width: 200px;
+}
+
+.radial-bars .radial-bar svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 200px; /* Increased width */
+    height: 200px; /* Increased height */
+    margin-top: 20px;
+}
+
+.radial-bars .radial-bar .progress-bar {
+    stroke-width: 13;
+    stroke: #000;
+    fill: transparent;
+    stroke-dasharray: 754; /* Adjusted for larger circle */
+    stroke-dashoffset: 754; /* Adjusted for larger circle */
+    stroke-linecap: round;
+    animation: animate-bar 1s linear forwards;
+}
+
+@keyframes animate-bar {
+    100% {
+        stroke-dashoffset: -1;
+    }
+}
+
+.path {
+    stroke-width: 15;
+    stroke: #0ef;
+    fill: transparent;
+    stroke-dasharray: 754; /* Adjusted for larger circle */
+    stroke-dashoffset: 754; /* Adjusted for larger circle */
+    stroke-linecap: round;
+}
+
+.path-1{ animation: animate-path1 1.8s 2s linear forwards;}
+.path-2{ animation: animate-path2 1.8s 2s linear forwards;}
+.path-3{ animation: animate-path3 1.8s 2s linear forwards;}
+.path-4{ animation: animate-path4 1.8s 2s linear forwards;}
+
+@keyframes animate-path1{
+    100%{
+        stroke-dashoffset: 50;
+    }
+}
+
+@keyframes animate-path2{
+    100%{
+        stroke-dashoffset: 75;
+    }
+}
+
+@keyframes animate-path3{
+    100%{
+        stroke-dashoffset: 125;
+    }
+}
+
+@keyframes animate-path4{
+    100%{
+        stroke-dashoffset: 90;
+    }
+}
+
+.radial-bar .percentage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-19px, -1px);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5 1s linear forwards;
+    opacity: 0;
+    color: #000;
+}
+
+@keyframes showText{
+    100%{
+        opacity: 1;
+    }
+}
+
+.progress-bar .text{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+    color: #000;
+}
+
+.heading{
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
 
 
 
